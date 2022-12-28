@@ -55,13 +55,12 @@ export const updateUser = async (req, res) => {
       });
       const token = jwt.sign(
         { username: user.username, id: user._id },
-        process.env.JWTKEY,
-        { expiresIn: "1h" }
+        process.env.JWT_KEY
       );
       console.log({user, token})
       res.status(200).json({user, token});
     } catch (error) {
-      console.log("Error agya hy")
+      console.log("Error")
       res.status(500).json(error);
     }
   } else {
