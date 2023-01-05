@@ -19,7 +19,7 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 dotenv.config();
-const PORT = process.env.PORT;
+
 
 const CONNECTION =process.env.MONGO_DB;
 mongoose
@@ -28,8 +28,13 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() =>
+<<<<<<< HEAD
     app.listen(PORT, () =>
       console.log(`Server loaded at http://localhost:${PORT}`)
+=======
+    app.listen(process.env.PORT, () =>
+      console.log('serve')
+>>>>>>> c202feb6a5861b856a15a217390af5fa23b0a265
     )
   )
   .catch((error) => console.log(error));

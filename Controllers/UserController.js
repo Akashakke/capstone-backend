@@ -1,4 +1,5 @@
 import UserModel from "../Models/userModel.js";
+
 import bcrypt from "bcrypt";
 import jwt from 'jsonwebtoken'
 // Get a User
@@ -32,12 +33,20 @@ export const getAllUsers = async (req, res) => {
   }
 };
 
+<<<<<<< HEAD
 // update a user
+=======
+// udpate a user
+>>>>>>> c202feb6a5861b856a15a217390af5fa23b0a265
 
 export const updateUser = async (req, res) => {
   const id = req.params.id;
   // console.log("Data Received", req.body)
+<<<<<<< HEAD
   const { _id, password } = req.body;
+=======
+  const { _id, currentUserAdmin, password } = req.body;
+>>>>>>> c202feb6a5861b856a15a217390af5fa23b0a265
   
   if (id === _id) {
     try {
@@ -54,7 +63,11 @@ export const updateUser = async (req, res) => {
         { username: user.username, id: user._id },
         process.env.JWT_KEY
       );
+<<<<<<< HEAD
       
+=======
+      console.log({user, token})
+>>>>>>> c202feb6a5861b856a15a217390af5fa23b0a265
       res.status(200).json({user, token});
     } catch (error) {
       console.log("Error")

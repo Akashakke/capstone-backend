@@ -10,4 +10,8 @@ router.put('/:id',authMiddleWare, updateUser)
 router.delete('/:id',authMiddleWare, deleteUser)
 router.put('/:id/follow',authMiddleWare, followUser)
 router.put('/:id/unfollow',authMiddleWare, unfollowUser)
+<<<<<<< HEAD
 export default router;
+=======
+export default router;
+>>>>>>> c202feb6a5861b856a15a217390af5fa23b0a265
