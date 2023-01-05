@@ -21,14 +21,15 @@ app.use(cors());
 dotenv.config();
 const PORT = process.env.PORT;
 
+const CONNECTION =process.env.MONGO_DB;
 mongoose
-  .connect(process.env.MONGO_DB, {
+  .connect(CONNECTION, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() =>
-    app.listen(process.env.PORT, () =>
-      console.log(`Server loaded at http://localhost:${process.env.PORT}`)
+    app.listen(PORT, () =>
+      console.log(`Server loaded at http://localhost:${PORT}`)
     )
   )
   .catch((error) => console.log(error));
